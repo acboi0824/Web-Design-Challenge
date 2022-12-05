@@ -1,37 +1,139 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<!doctype html>
+<html lang="en">
   <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <!-- Add a title here -->
-
-    <!-- Boostrap Stylesheet -->
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" media="screen">
-
-    <!-- Our own CSS stylesheet -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- import css -->
     <link rel="stylesheet" href="../assets/css/styles.css" media="screen">
-
+    
   </head>
 
-  <body>
-    <!-- Start of navbar -->
-    <!-- End of navbar -->
+  <body style="height:850px">
+    <!-- navbar -->
+    <div class="navigation">
+      <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark p-2">
+        <div class="container-fluid">
+          <!-- styling -->
+          <a 
+          href="../index_redux.html"
+          class="navbar-brand mb-0 h1">
+          <img 
+          class="d-inline-block align-top"
+          src="https://cdn-icons-png.flaticon.com/512/5234/5234318.png"
+          width="30px" height="30px"
+          />
+            Latitude
+          </a> 
+          <button
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            class="navbar-toggler"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+            Menu
+          </button>
+          <div 
+            class="collapse navbar-collapse" 
+            id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item active">
+                <a href="../index_redux.html" class="nav-link ">
+                  Home
+                </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle active"
+                id="navbarDropdown" role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false" 
+                >
+                  Plots
+                </a>
+                <ul class="dropdown-menu"
+                aria-labelledby="navbarDropdown"> 
+                  <li><a href="temp.html" class="dropdown-item">Max Temperature</a></li>
+                  <li><a href="humidity.html" class="dropdown-item">Humidity</a></li>
+                  <li><a href="cloudiness.html" class="dropdown-item">Cloudiness</a></li>
+                  <li><a href="wind.html" class="dropdown-item active">Wind Speed</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="comparison.html" class="nav-link">
+                  Comparison
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="data.html" class="nav-link">
+                  Data
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="https://github.com/acboi0824/acboi0824.web-design-challenge.github.io" class="nav-link">
+                  About/Repo
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- search button that does nothing -->
+          <!-- <form class="d-flex">
+            <input type="text" class="form-control me-2">
+            <button type="submit"  class="btn btn-primary">Search</button>
+          </form> -->
+        </div>
+      </nav>
+    </div>  
+    <!-- extra space between nav and container -->
+    <section class="bg-dark text-light p-3 "></section>
 
-    <!-- Start of container -->
+    <!-- CONTENT -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 mt-5">
+          <div class="card">
+            <h4 class="card-header bg-info text-white">Latitude vs. Wind Speed</h4>
+            <div class="card-body">
+              <img id="img-wrap" class="img-fluid img-center" src="../assets/images/Fig4.png" Title="Lat vs Wind Speed" width="400">
+              <p class="card-text font-weight-light">The scatterplot for Latitude vs. Wind Speed (mph) again, does not show correlation, like humidity and cloudiness. It is observed that wind speeds are generally low at this time (June 2020).</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5 mt-5">
+          <div class="card">
+            <h4 class="card-header text-info">Visualizations</h4>
+            <div class="card-body">
+              <div class="row pb-3">
+                <div class="col-md-6">
+                  <a href="temp.html"><img class="img-fluid img-center viz-box" src="../assets/images/Fig1.png" title="Lat vs. Max Temp" width="400"></a>
+                </div>
+                <div class="col-md-6">
+                  <a href="humidity.html"><img class="img-fluid img-center viz-box" src="../assets/images/Fig2.png" title="Lat vs. Humidity" width="400"></a>
+                </div>
+              </div>
+              <div class="row pb-3">
+                <div class="col-md-6">
+                  <a href="cloudiness.html"><img class="img-fluid img-center viz-box " src="../assets/images/Fig3.png" title="Lat vs. Cloudiness" width="400"></a>
+                </div>
+                <div class="col-md-6">
+                  <a href="wind.html"><img class="img-fluid img-center viz-box active" src="../assets/images/Fig4.png" title="Lat vs. Wind Speed" width="400"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-          <!-- Start of Visualizations imageNav Area -->
-          <!-- End of the Visualizations imageNav Area -->
+    <!-- javascript bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
-    <!-- End of container -->
-
-    <!-- jQuery CDN -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-
-    <!-- Bootstrap CDN -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   </body>
 
 </html>
